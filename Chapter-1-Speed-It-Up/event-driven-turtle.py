@@ -1,0 +1,1 @@
+    window.onkey(moveLeft, "Left")
