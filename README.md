@@ -1,1 +1,3 @@
-# xCon
+# xemCon
+
+Concurrency with Python
