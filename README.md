@@ -1,3 +1,5 @@
-# xemCon
+# erocon
 
-Concurrency with Python
+efficienct, robust, concurrent
+
+with Python
