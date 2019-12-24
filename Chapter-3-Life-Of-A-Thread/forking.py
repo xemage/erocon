@@ -1,15 +1,19 @@
 import os
 
-def child():
-    print("We are in the child process with PID={0}".format(os.getpid()))
+NUM_PROC = 5
+children = []
 
-def parent():
-    print("We are in the parent process with PID={0}".format(os.getpid()))
-    newRef=os.getpid()
+for process in range(NUM_PROC):
+    pid = os.fork() # this doesn't work on Windows
 
-    if newRef==0:
-        child()
-    else:
-        print("We are in the parent process and our child process has PID={0}".format(newRef))
+    if pid > 0: 
+        print("This is the parent process {0}".format(os.getpid()))
+        children.append(pid)
+    else: 
+        print("This is the child process {0}".format(os.getpid()))
+        os._exit(0)
 
-parent()
+for i, proc in enumerate(children):
+    os.waitpid(proc, 0)
+
+print("Parent process is closing")
