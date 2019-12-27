@@ -26,8 +26,10 @@ class myWorker():
             print("Rlock acquired, modifying A and B")
             print("{0}".format(self.Rlock))
             self.modifyA()
+            print("{0}".format(self.Rlock))
             self.modifyB()
             print("{0}".format(self.Rlock))
+        print("{0}".format(self.Rlock))
 
 workerA = myWorker()
 workerA.modifyBoth()
