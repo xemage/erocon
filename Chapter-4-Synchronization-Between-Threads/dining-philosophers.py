@@ -1,3 +1,5 @@
+# Example of a dead lock
+
 import threading
 import time
 import random
