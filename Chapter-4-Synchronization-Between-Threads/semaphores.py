@@ -1,9 +1,12 @@
+# Better use a bounded semaphore to prevent too many released locks
+# BoundedSemaphore(4) instead of Semaphore()
+
 import threading
 import random
 import time
 
 # Sempahore primitive
-semaphore = threading.Semaphore()
+semaphore = threading.BoundedSemaphore(4) #.Semaphore()
 # Ticket allocation
 ticketsAvailable = 100
 
