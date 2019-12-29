@@ -18,7 +18,9 @@ class myThread(threading.Thread):
         self.barrier.wait()
         print("Barrier has been lifted, continuing with work")
 
-barrier = threading.Barrier(4)
+# The 4 that we’ve passed into this as an argument represents the 
+# number of threads that have to be waiting on the barrier before it will be lifted.
+barrier = threading.Barrier(4) 
 threads = []
 
 for i in range(4):
