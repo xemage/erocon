@@ -6,12 +6,15 @@
 # for value in values:
 #   executor.submit(multiplyByTwo, (value))
 
+import threading
 from concurrent.futures import ThreadPoolExecutor
 from concurrent.futures import as_completed
 
 values = [2,3,4,5,6,7,8,'a']
 
 def multiplyByTwo(n):
+    print("Thread {} is calculating".format(threading.currentThread()))
+    
     return 2 * n
 
 def main():
